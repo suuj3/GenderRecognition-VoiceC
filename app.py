@@ -61,7 +61,7 @@ def predict():
         
         # Make prediction
         prediction = model.predict(scaled_features)
-        gender = "Male" if prediction[0][0] < 0.5 else "Female"
+        gender = "Female" if prediction[0][0] < 0.5 else "Male"
         confidence = float(prediction[0][0] if prediction[0][0] > 0.5 else 1 - prediction[0][0])
         
         return jsonify({
